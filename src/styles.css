@@ -1,1 +1,19 @@
 @import "~bootstrap/dist/css/bootstrap.css";
+
+/* common- module css */
+html,body, div, span, h1, h2, h3, h4, h5, h6, p, a, img, center, ul, li, fieldset, form, label, footer, header{margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline;}
+body{font-family: 'Montserrat', sans-serif; background: #f1efef; font-size: 13px;}
+.site-content{display: inline-block; width: 100%;  padding: 120px 0 60px 0;}
+
+/* Header */
+.main-header{display: inline-block; width: 100%; position: fixed; z-index: 99;}
+.top-bar{display: inline-block; width: 100%; background: #fff;}
+.top-bar-left{float: left; width:132px; height:56px;}
+.top-bar-right{float: right; margin:10px 0 0 0;}
+.top-bar-right a{color: #101010; margin:0 10px 0;}
+/* Header */
+
+/* Footer */
+footer{display: inline-block; position: absolute; bottom: 0; left: 0; width: 100%; background: #1a2942; padding:13px 0; text-align: center; }
+footer p{color:#fff;}
+/* Footer */
