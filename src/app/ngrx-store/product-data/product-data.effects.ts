@@ -6,7 +6,10 @@ import { catchError, map, switchMap } from 'rxjs/operators';
 
 @Injectable()
 export class ProductDataEffects {
+
   constructor(private actions: Actions, private appService: AppService) {}
+
+  /* load Products through effects */
   loadProducts = createEffect(() =>
   this.actions.pipe(
     ofType(loadProducts),

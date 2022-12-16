@@ -25,6 +25,7 @@ export class ProductListComponent implements OnInit {
   constructor(private apiService: AppService,private store: Store<ProductTableState>) { }
 
   ngOnInit() {
+    /**options to set the view for the datatable */
     this.dtOptions = {
       pagingType: 'numbers',
       pageLength: 10,
@@ -33,27 +34,35 @@ export class ProductListComponent implements OnInit {
       dom: 'tp',
     };
    
+    /** get data to dispatch it in state */
     this.getProductData();
+
+    /**Dispatch data to state */
     this.store.dispatch(ProductDataActions.setData({ data: this.productList }));
     this.productData = this.store.select(ProductDataSelectors.selectData);
     
   }
 
+  /** get data from api service throuh http client */
   getProductData(): void {
     this.apiService.getData().subscribe(data => {
       this.productList = of(data);
       this.dtTrigger.next(void 0);
     })
   }
+  
+  /** reset the state  */
   ngOnDestroy(): void {
     this.store.dispatch(ProductDataActions.resetDataTableStore());
   }
+
+  /** send value to child component and view the component */
   trackById(product: Product) {
-    
     this.productDetail.next(product);
     this.isDetailView = true;
   }
 
+  /** hide the details component */
   updateView(){
     this.isDetailView = false;
   }

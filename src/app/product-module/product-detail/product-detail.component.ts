@@ -10,9 +10,12 @@ import { Product } from 'src/app/ngrx-store/product-data/product-data.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  productDetail!: FormGroup;
+  /*Reactive form group to set value for details*/
+  productDetail!: FormGroup; 
 
+  /**Input to get selected data from parent used behaviour subject as it holds the value */
   @Input() productDetailVal!: BehaviorSubject<Product>;
+  /**Output to pass the value to parent on button click */
   @Output() viewProductList: EventEmitter<boolean> =   new EventEmitter();
 
   
@@ -25,11 +28,12 @@ export class ProductDetailComponent implements OnInit {
       coffeeNotes: new FormControl(''),
       coffeeIntensifier: new FormControl('')
     });
+
     this.setProductVal();
   }
 
   /*
-  *
+  * method to set values to formcontrol once we subribe the input
   */
   setProductVal() {
     this.productDetailVal.subscribe(product => {
@@ -44,6 +48,7 @@ export class ProductDetailComponent implements OnInit {
   
   }
 
+  /** emit value to parent */
   getProductListView(){
     this.viewProductList.emit(true)
   }

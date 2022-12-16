@@ -1,3 +1,5 @@
+ /* constant for table data */
+
 export interface Product {
     id: number;
     uid: string;
@@ -9,14 +11,11 @@ export interface Product {
 
   }
 
+
+ /* constant model for product data */
   export interface ProductTableState {
     tableData: any[];
     sortDirection: string;
     sortKey: string;
   }
   
-  export interface ProductHeaderRow {
-    displayName: string;
-    key: string;
-    hasSort: boolean;
-  }
