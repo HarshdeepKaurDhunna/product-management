@@ -5,6 +5,8 @@ import { ProductTableState } from './product-data.model';
 /*listener of actions.  gives the state an initial value */
 export const INITIAL_STATE: ProductTableState = {
   tableData: [],
+  sortDirection: '',
+  sortKey: ''
 };
 export const productDataFeatureKey = 'dataTable';
 
