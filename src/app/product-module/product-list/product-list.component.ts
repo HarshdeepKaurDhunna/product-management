@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
 import { AppService } from 'src/app/services/app.service';
 
 // NgRx
@@ -15,11 +15,13 @@ import { Product, ProductTableState} from '../../ngrx-store/product-data/product
 })
 export class ProductListComponent implements OnInit {
 
-  public productList!: Observable<any>;
-  public productData!: Observable<any>;
+  productList!: Observable<any>;
+  productData!: Observable<any>;
   dtOptions: DataTables.Settings = {};
   dtTrigger: Subject<any> = new Subject<any>();
-
+  productDetail: BehaviorSubject<any> = new BehaviorSubject(null);
+  isDetailView: boolean = false;
+  
   constructor(private apiService: AppService,private store: Store<ProductTableState>) { }
 
   ngOnInit() {
@@ -47,8 +49,13 @@ export class ProductListComponent implements OnInit {
     this.store.dispatch(ProductDataActions.resetDataTableStore());
   }
   trackById(product: Product) {
-    console.log(product)
     
+    this.productDetail.next(product);
+    this.isDetailView = true;
+  }
+
+  updateView(){
+    this.isDetailView = false;
   }
 
 }

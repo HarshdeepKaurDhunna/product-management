@@ -1,34 +1,40 @@
-<div class="grid-box">
-  <div class="grid-heading">
-    <h3>Coffee List</h3>
-  </div>
-  <div class="grid-inner">
-    <div class="form-row">
-      <div class="row">
-        <div class="col-md-12 col-xs-12">
-          <div class="table-responsive">
-            <table id="product-list-table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
-              class="table table-stripped">
-              <thead>
-                <tr>
-                  <th>Name</th>
-                  <th>Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr *ngFor="let product of productList | async; ">
-                  <td>{{ product.blend_name }}</td>
-                  <td>
-                    <div class="tb-actions">
-                      <a (click)="trackById(product)" href="javascript:void(0)" class="table-action-btn save-ico">view</a>
-                    </div>
-                </td>
-                </tr>
-              </tbody>
-            </table>
+
+<ng-container *ngIf="isDetailView">
+  <app-product-detail [productDetailVal]="productDetail" (viewProductList)="updateView()"></app-product-detail>
+</ng-container>
+
+  
+  <div class="grid-box">
+    <div class="grid-heading">
+      <h3>Coffee List</h3>
+    </div>
+    <div class="grid-inner">
+      <div class="form-row">
+        <div class="row">
+          <div class="col-md-12 col-xs-12">
+            <div class="table-responsive">
+              <table id="product-list-table" datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                class="table table-stripped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let product of productList | async; ">
+                    <td>{{ product.blend_name }}</td>
+                    <td>
+                      <div class="tb-actions">
+                        <a (click)="trackById(product)" href="javascript:void(0)" class="table-action-btn save-ico">Details</a>
+                      </div>
+                  </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>

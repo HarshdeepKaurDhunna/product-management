@@ -1,1 +1,46 @@
-<p>product-detail works!</p>
+
+<form [formGroup]="productDetail">
+    <div class="grid-box">
+        <div class="grid-heading">
+            <h3>Coffee-Info</h3>
+        </div>
+        <!-- Grid Heading Ends -->
+        <div class="grid-inner">
+            <div class="form-row">
+                <div class="row min-ht-sf">
+                    <div class="col-md-3 col-xs-12">
+                        <label>Coffee Blend Name</label>
+                        <input id="blendNameId" type="text" class="fm-txt form-control" placeholder="Blend Name"
+                             formControlName="blendName">
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <label>Coffee Origin</label>
+                        <input id="coffeeOriginId" type="text" class="fm-txt form-control" placeholder="Coffee Origin"
+                             formControlName="coffeeOrigin">
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <label>Coffee Variety</label>
+                        <input id="coffeeVarietyId" type="text" placeholder="Coffee Variety" class="fm-txt form-control"
+                             formControlName="coffeeVariety">
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <label>Coffee Intensifier</label>
+                        <input id="coffeeIntensifierId" type="text" placeholder="Coffee Intensifier" class="fm-txt form-control"
+                             formControlName="coffeeIntensifier">
+                    </div>
+                    <div class="col-md-3 col-xs-12">
+                        <label>Coffee Notes</label>
+                        <input id="coffeeNotesId" type="text" placeholder="Coffee Notes" class="fm-txt form-control"
+                             formControlName="coffeeNotes">
+                    </div>
+                    <div class="tb-actions">
+                        <button (click)="getProductListView()" class = " table-action-btn edit-ico">Cancel</button>
+                    </div>
+                  
+                </div>
+            </div>
+            <!-- Form Row ENds -->
+        </div>
+        <!-- Grid Inner Ends -->
+    </div>
+</form>
