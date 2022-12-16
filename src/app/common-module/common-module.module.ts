@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { CommonModuleRoutingModule } from './common-module-routing.module';
 import { CommonHeaderComponent } from './common-header/common-header.component';
 import { CommonFooterComponent } from './common-footer/common-footer.component';
 
@@ -12,8 +11,7 @@ import { CommonFooterComponent } from './common-footer/common-footer.component';
     CommonFooterComponent
   ],
   imports: [
-    CommonModule,
-    CommonModuleRoutingModule
+    CommonModule
   ],
   exports: [
     CommonHeaderComponent,
