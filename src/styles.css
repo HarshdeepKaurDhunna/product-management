@@ -7,15 +7,16 @@ a:hover,a:focus{text-decoration: none;}
 a,input,button{outline: 0;}
 .site-content{display: inline-block; width: 100%;  padding: 80px 0 40px 0;}
 
+
 /* Header */
 .main-header{display: inline-block; width: 100%; position: fixed; z-index: 99;}
 .top-bar{display: inline-block; width: 100%; background: #bbd9eb;}
-.top-bar-left{float: left; width:132px; height:56px;}
+.top-bar-left{float: left; width:132px; height:45px;}
 .top-bar-right{float: right; margin:10px 0 0 0;}
 .top-bar-right a{color: #101010; margin:0 10px 0;}
 /* Header */
 
-.grid-box{display: inline-block; width: 100%; background: #ffffff; box-shadow: 0 0 5px rgba(0,0,0,0.15); margin:0 0 15px;}
+.grid-box{display: inline-block; width: 100%; background: #ffffff; }
 .grid-inner{display: inline-block; width: 100%; padding:15px }
 .grid-inner .form-row .row {display: contents;}
 .grid-heading{display: inline-block; width: 100%;  position: relative; padding:10px 15px;}
@@ -33,10 +34,19 @@ table tr:nth-child(2n+2){background: #f1f1f1;}
   .view-ico:hover, .view-ico:focus {
     background: #fff;
   }
-.edit-ico{background: #0085af;}
+.edit-ico{background: #0085af; margin-top: 37px;}
 .edit-ico:hover, .edit-ico:focus {background: #007194;}
 table.table-stripped tr td{background: #fff; position: relative}
 table.table-stripped tr:nth-child(2n) td{background: #f1f1f1 !important;}
+label{display: inline-block; position:relative; width: 100%; color:#505050; font-weight: 500; font-size: 0.9rem; margin:0 0 5px 0;}
+.form-row .col-md-12{min-height: 75px !important; }
+.form-row .min-ht-sf div[class^="col-"]{min-height: 75px;}
+.form-row .min-ht-st div[class^="col-"]{min-height: 60px !important;}
+.form-row .min-ht-tt div[class^="col-"]{min-height: 30px !important;}
+.form-row .btn{margin-bottom:15px;}
+.form-control {border-color: #d2d2d2;border-radius: 0;border-width: 0 0 1px;height: 45px;box-shadow:  0 0 0 0;padding-left: 5px;font-size: 12px;}
+
+
 
 
 /* Footer */
